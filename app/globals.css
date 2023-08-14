@@ -1,27 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  color: white;
+  
+}
+
+.main-bg{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(3, 0, 41) 97%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+}
+
+.app {
+  @apply relative z-10 flex  items-center flex-col w-full mx-auto sm:px-8 px-1 min-h-screen;
+}
+
+h1{
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: transparent;
+  text-align: center;
+  margin-top: 2rem;
+  background: linear-gradient(89deg, rgba(143, 179, 255, 1) 0%, rgba(29, 86, 221, 1) 96%);
+  background-clip: text;
+
+}
+
+h2{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgb(208, 242, 255);
+  text-align: center;
+}
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.nav{
+  @apply flex justify-between items-center w-full py-4;
+}
+
+.nav-left{
+  @apply flex items-center;
+}
+
+.nav-right{
+  @apply flex items-center;
+}
+
+.nav-links{
+  @apply flex items-center gap-10 text-lg;
+}
+
+.nav-left img{
+  @apply h-8 w-full;
+}
+
+.course-list-container{
+  @apply flex flex-col items-center w-full;
+}
+.course-list {
+  @apply flex flex-wrap gap-4 mt-10 max-w-[1400px] px-4 lg:px-20 justify-center; /* Changed flex direction to wrap */
+}
+
+.course {
+  background: linear-gradient(89deg, rgb(14, 46, 117) 0%, rgb(21, 61, 154) 96%);
+  @apply flex justify-between items-center gap-5 border border-gray-700 py-5 px-3 rounded-3xl w-full sm:w-[350px] md:w-[350px] lg:w-[350px] xl:w-[400px];
+  /* Updated code below for responsive centering and equal spacing */ /* Center the course */
+}
+.course h3{
+  @apply font-semibold w-1/4;
+  background: linear-gradient(89deg, rgb(250, 64, 232) 0%, rgb(132, 169, 255) 96%);
+  background-clip: text;
+  color : transparent;
+}
+
+.course p{
+  @apply w-3/4;
+}
+.search-bar{
+  @apply border bg-slate-300 text-black border-black py-5 px-3 rounded-full my-5 mx-2 w-full sm:w-1/2;
+}
+
+.wrapper{
+  @apply flex flex-col w-full items-center ;
+}
+
+.wrapperabout{
+  @apply flex flex-col w-full items-center ;
+}
+
+.faculty-filter{
+  @apply flex items-center gap-5;
+}
+
+input{
+  @apply text-lg;
+}
+
+.load-more{
+  @apply bg-gradient-to-r bg-clip-text text-transparent my-4;
+  background: linear-gradient(89deg, rgb(250, 64, 232) 0%, rgb(132, 169, 255) 96%);
+  background-clip: text;
+  color : transparent;
+}
+
+.course-container{
+  @apply flex flex-col xl:flex-row items-center w-full;
+}
+
+.course-header{
+  @apply flex flex-col justify-center items-center w-full xl:w-1/2;
+}
+.course-body{
+  @apply flex flex-col justify-center items-start w-1/2;
+  margin-top: 3rem;
+}
+
+.course-header p{
+  @apply text-base mt-4 mx-3 xl:mx-0;
+  background: linear-gradient(89deg, rgb(179, 196, 241) 0%, rgb(132, 169, 255) 96%);
+  background-clip: text;
+  color : transparent;
+  
+}
+
+.aboutp{
+  @apply text-base mt-4 mx-3 xl:mx-0 w-full lg:w-2/3 lg:text-xl;
+  background: linear-gradient(89deg, rgb(179, 196, 241) 0%, rgb(132, 169, 255) 96%);
+  background-clip: text;
+  color : transparent;
+}
+.aboutp2{
+  @apply text-xl mt-4 mx-3 xl:mx-0 w-2/3 font-bold;
+  background: linear-gradient(89deg, rgb(179, 196, 241) 0%, rgb(132, 169, 255) 96%);
+  background-clip: text;
+  color : transparent;
+}
+
+.point-line{
+  @apply flex items-center w-full justify-center gap-2;
+}
+
+.point-line h3{
+  @apply text-lg;
+  background: linear-gradient(89deg, rgb(250, 64, 232) 0%, rgb(132, 169, 255) 96%);
+  background-clip: text;
+  color : transparent;
+}
+
+.point{
+  @apply w-4 h-4 rounded-full bg-[#ec31f3];
+}
+.line{
+  @apply h-1 w-20 rounded-lg;
+  background: linear-gradient(89deg, rgba(236, 49, 243, 1) 0%, rgba(29, 86, 221, 0) 95%);
+}
+.line2{
+  @apply h-1 w-20 rounded-lg;
+  background: linear-gradient(89deg, rgba(29, 86, 221, 0) 0%, rgba(236, 49, 243, 1) 95%);
+}
+
+.course-header h1{
+  @apply text-5xl font-semibold mb-3;
+}
+
+.wrapperabout a{
+  background: linear-gradient(89deg, rgb(250, 64, 232) 0%, rgb(132, 169, 255) 96%);
+  background-clip: text;
+  color : transparent;
 }
