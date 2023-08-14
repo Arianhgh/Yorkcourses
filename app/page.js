@@ -15,7 +15,7 @@ export default function Home() {
         className="w-full flex flex-col justify-center items-center"
       >
         <h1>
-          York's Courses
+          York Courses
         </h1>
         <h2>
           A Comprehensive Course Directory
